@@ -1,3 +1,4 @@
+/* Reset y estilos generales */
 body {
   margin: 0;
   padding: 0;
@@ -5,6 +6,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Estilos para el encabezado */
 header {
   background-color: #343a40;
   color: white;
@@ -30,6 +32,7 @@ header nav ul li a {
   font-weight: bold;
 }
 
+/* Sección de productos destacados */
 .featured-products {
   display: flex;
   justify-content: space-around;
@@ -37,6 +40,7 @@ header nav ul li a {
   padding: 2rem;
 }
 
+/* Tarjeta de producto */
 .product-card {
   background-color: white;
   border-radius: 5px;
@@ -51,17 +55,21 @@ header nav ul li a {
   justify-content: space-between;
 }
 
+/* Imagen con dimensiones fijas y efecto de recorte */
 .product-card img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 200px;       /* Altura fija para homogeneizar todas las imágenes */
+  object-fit: cover;   /* Ajusta la imagen recortándola si es necesario */
   border-radius: 5px;
 }
 
+/* Estilo para el precio */
 .product-card .price {
   font-weight: bold;
   margin: 1rem 0;
 }
 
+/* Botón "Comprar Ahora" */
 .product-card button {
   background-color: #28a745;
   color: white;
@@ -77,6 +85,7 @@ header nav ul li a {
   transform: scale(1.05);
 }
 
+/* Estilos para el pie de página */
 footer {
   background-color: #343a40;
   color: white;
@@ -85,13 +94,29 @@ footer {
   margin-top: 2rem;
 }
 
-@media (max-width: 768px) {
+/* Media Query para dispositivos medianos (tabletas y pantallas entre 576px y 992px) */
+@media (max-width: 992px) {
+  .featured-products {
+    justify-content: center;
+    padding: 1.5rem;
+  }
+
+  .product-card {
+    max-width: 45%;
+    margin: 1rem;
+  }
+}
+
+/* Media Query para dispositivos pequeños (móviles) */
+@media (max-width: 576px) {
   .featured-products {
     flex-direction: column;
     align-items: center;
+    padding: 1rem;
   }
 
   .product-card {
     max-width: 90%;
+    margin: 0.5rem;
   }
 }
